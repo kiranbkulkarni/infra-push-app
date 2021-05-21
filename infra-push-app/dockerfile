@@ -16,4 +16,4 @@ COPY ./ .
 
 EXPOSE 8080
 
-CMD ["dumb-init", "node", "server.js"]
+CMD ["npm", "start"]

@@ -10,7 +10,7 @@ push-dev-test-website:
 	
 # Deploy related
 deploy-dev-test-website:
-	helm install dev-test-website ./deploy/ -n infra-push-app --create-namespace
+	helm install infra-push-app ./deploy/ -n infra-push-app --create-namespace
 
 # Restart related
 restart-dev-test-website:
