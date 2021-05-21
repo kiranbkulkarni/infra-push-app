@@ -1,0 +1,19 @@
+FROM node:14.17-alpine
+
+ENV NODE_ENV production
+
+RUN apk update; apk upgrade; apk fetch dumb-init; apk add dumb-init; rm dumb*
+
+# Install app dependencies
+COPY ./package*.json ./
+
+RUN npm install
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY ./ .
+
+
+EXPOSE 8080
+
+CMD ["dumb-init", "node", "server.js"]
