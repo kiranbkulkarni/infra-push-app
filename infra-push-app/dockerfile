@@ -1,6 +1,6 @@
 FROM node:14.17-alpine
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 
 RUN apk update; apk upgrade; apk fetch dumb-init; apk add dumb-init; rm dumb*
 
